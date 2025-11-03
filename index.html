@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joyal Mascarenhas — Full Stack Developer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      color: #222;
+      background: linear-gradient(135deg, #e0f7fa, #f0ffff, #e8f5f3);
+      background-size: 300% 300%;
+      animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .sidebar {
+      width: 28%;
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border-right: 2px solid #c8f5f3;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      box-shadow: 6px 0 15px rgba(0,0,0,0.08);
+    }
+
+    .sidebar img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid teal;
+      object-fit: cover;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .sidebar img:hover { transform: scale(1.08); }
+
+    .sidebar h1 {
+      font-size: 1.8rem;
+      color: teal;
+      margin-bottom: 5px;
+    }
+    .sidebar p {
+      text-align: center;
+      color: #666;
+      font-size: 1rem;
+    }
+
+    /* ✅ Social Links */
+    .socials {
+      margin-top: 25px;
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+    }
+    .socials a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .socials a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 12px rgba(0,128,128,0.6);
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: teal;
+      transition: fill 0.3s;
+    }
+    .socials a:hover svg { fill: #006666; }
+
+    .contact {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: #444;
+    }
+    .contact a { color: teal; text-decoration: none; }
+
+    .btn {
+      margin-top: 25px;
+      background: teal;
+      color: #fff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 3px 10px rgba(0,128,128,0.3);
+    }
+    .btn:hover { background: #009999; transform: translateY(-2px); }
+
+    /* Main Section */
+    .main {
+      flex: 1;
+      padding: 50px 70px;
+      overflow-y: auto;
+    }
+    section {
+      margin-bottom: 70px;
+      background: #ffffffb0;
+      border-radius: 15px;
+      padding: 25px 30px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: teal;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      position: relative;
+      font-weight: 600;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      border-radius: 3px;
+      background: teal;
+    }
+    ul { margin-left: 20px; color: #444; line-height: 1.6; }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 900px) {
+      body { flex-direction: column; }
+      .sidebar { width: 100%; box-shadow: none; border: none; }
+      .main { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <img src="images/MY-PFP.jpg" alt="Profile Photo">
+    <h1>Joyal Mascarenhas</h1>
+    <p>Full Stack Developer</p>
+
+    <!-- ✅ SVG Social Icons (No CDN) -->
+    <div class="socials">
+      <a href="https://linkedin.com/in/joyal-mascarenhas-3707bb372" target="_blank" title="LinkedIn">
+        <!-- LinkedIn SVG -->
+        <svg viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11.5 19h-3v-10h3v10zm-1.5-11.271c-.966 0-1.75-.79-1.75-1.762s.784-1.762 1.75-1.762 1.75.79 1.75 1.762-.784 1.762-1.75 1.762zm13.5 11.271h-3v-5.604c0-1.337-.026-3.059-1.865-3.059-1.868 0-2.154 1.459-2.154 2.968v5.695h-3v-10h2.885v1.367h.041c.403-.764 1.388-1.566 2.857-1.566 3.053 0 3.621 2.01 3.621 4.627v5.572z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/meme-joel" target="_blank" title="GitHub">
+        <!-- GitHub SVG -->
+        <svg viewBox="0 0 24 24">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.547-1.387-1.335-1.757-1.335-1.757-1.09-.746.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.303-5.467-1.335-5.467-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.044.138 3.004.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.119 3.176.77.84 1.235 1.912 1.235 3.222 0 4.609-2.807 5.625-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576 4.765-1.59 8.2-6.086 8.2-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="contact">
+      <p>📍 Udupi, Karnataka, India</p>
+      <p>📞 +91 7338511514</p>
+      <p>✉️ <a href="mailto:joyalmascarenhas@outlook.com">joyalmascarenhas@outlook.com</a></p>
+    </div>
+
+    <a href="./images/joels-resume.docx" download><button class="btn">Download Resume</button></a>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <section>
+      <h2>About Me</h2>
+      <p>A motivated BCA graduate passionate about designing, building, and deploying scalable full-stack web applications using the MERN stack. I focus on clean code, responsive UI, and modern backend practices for performance-driven web solutions.</p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Frontend:</strong> React.js, Tailwind CSS, HTML5, CSS3</li>
+        <li><strong>Backend:</strong> Node.js, Express.js</li>
+        <li><strong>Database:</strong> MongoDB, SQL (basic)</li>
+        <li><strong>Tools:</strong> Postman, Cloudinary, GitHub Actions, VS Code</li>
+        <li><strong>Version Control:</strong> Git, GitHub</li>
+        <li><strong>Cloud & Deployment:</strong> Netlify, Cloudinary</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <p><strong>Full-stack Blog Platform:</strong> A fully functional blog app featuring:</p>
+      <ul>
+        <li>Secure authentication (JWT + refresh tokens)</li>
+        <li>CRUD operations with Cloudinary image uploads</li>
+        <li>Comment & like systems (authenticated users only)</li>
+        <li>Responsive design using React + Tailwind</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>Bachelor of Computer Applications (BCA)</strong><br>Milagres College, Kallianpur, Udupi — <em>Graduation: 2025</em></p>
+    </section>
+
+    <section>
+      <h2>Internship</h2>
+      <p><strong>Pentagon Space, Bangalore</strong><br>Software Development Intern — Contributed to web development and code optimization tasks.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Let’s collaborate or discuss new opportunities! Feel free to reach out through email or LinkedIn.</p>
+    </section>
+  </main>
+</body>
+</html>
